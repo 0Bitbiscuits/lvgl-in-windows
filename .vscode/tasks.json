@@ -1,0 +1,50 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cmake 配置",
+            "type": "shell",
+            "command": "${config:lvgl.path.cmakeExe}",
+            "args": [
+                "-G", "Ninja",
+                "-B", "build",
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-DCMAKE_MAKE_PROGRAM=${config:lvgl.path.ninjaExe}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "${config:lvgl.path.msys2UcrtBin};${config:lvgl.path.cmakeExe}/..;${env:PATH}"
+                }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "ninja 编译",
+            "type": "shell",
+            "command": "${config:lvgl.path.ninjaExe}",
+            "args": ["-C", "build"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "${config:lvgl.path.msys2UcrtBin};${env:PATH}"
+                }
+            },
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "运行",
+            "type": "process",
+            "command": "${config:lvgl.path.outputExe}",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "${config:lvgl.path.msys2UcrtBin};${env:PATH}"
+                }
+            },
+            "dependsOn": "ninja 编译",
+            "problemMatcher": []
+        }
+    ]
+}
