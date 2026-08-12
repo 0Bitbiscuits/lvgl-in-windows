@@ -4,7 +4,7 @@
         {
             "label": "cmake 配置",
             "type": "shell",
-            "command": "${config:lvgl.path.cmakeExe}",
+            "command": "${config:lvgl.path.cmakeExe}\\cmake.exe",
             "args": [
                 "-G", "Ninja",
                 "-B", "build",
@@ -14,7 +14,7 @@
             "options": {
                 "cwd": "${workspaceFolder}",
                 "env": {
-                    "PATH": "${config:lvgl.path.msys2UcrtBin};${config:lvgl.path.cmakeExe}/..;${env:PATH}"
+                    "PATH": "${config:lvgl.path.msys2UcrtBin};${config:lvgl.path.cmakeExe};${env:PATH}"
                 }
             },
             "problemMatcher": []

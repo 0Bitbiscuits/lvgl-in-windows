@@ -1,7 +1,7 @@
 {
     /* ========= LVGL 项目自定义路径（改这里就行）========= */
-    "lvgl.path.msys2UcrtBin": "F:/App/msys2/ucrt64/bin",
-    "lvgl.path.cmakeExe":      "F:/App/Cmake/bin/cmake.exe",
-    "lvgl.path.ninjaExe":      "F:/App/msys2/ucrt64/bin/ninja.exe",
+    "lvgl.path.msys2UcrtBin": "C:\\Workspace\\1-Apps\\msys2\\ucrt64\\bin",
+    "lvgl.path.cmakeExe":      "C:\\Workspace\\1-Apps\\CMake\\bin",
+    "lvgl.path.ninjaExe":      "C:\\Workspace\\1-Apps\\Ninja\\ninja.exe",
     "lvgl.path.outputExe":     "${workspaceFolder}/runtime/lvgl_playground.exe"
 }

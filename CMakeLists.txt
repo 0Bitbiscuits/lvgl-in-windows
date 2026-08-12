@@ -41,6 +41,11 @@ target_compile_options(lvgl_playground PRIVATE
     ${SDL2_CFLAGS_OTHER}
 )
 
+# Tell LVGL where to find lv_conf.h. LVGL v9's own CMake only puts its source
+# dir on the include path; without this, lv_conf_internal.h's
+# `#include "lv_conf.h"` can't find the config at the project root.
+set(LV_CONF_PATH "${CMAKE_SOURCE_DIR}/lv_conf.h" CACHE STRING "Path to lv_conf.h" FORCE)
+
 add_subdirectory(lvgl)
 
 target_link_libraries(lvgl_playground PRIVATE

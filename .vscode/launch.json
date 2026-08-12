@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "调试 lvgl_playground",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${config:lvgl.path.outputExe}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}\\runtime",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "${config:lvgl.path.msys2UcrtBin};${env:PATH}"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "${config:lvgl.path.msys2UcrtBin}\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "ninja 编译"
+        }
+    ]
+}
