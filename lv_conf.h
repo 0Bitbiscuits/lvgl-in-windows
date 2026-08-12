@@ -38,7 +38,7 @@
     #define LV_DRAW_SW_COMPLEX          1
 #endif
 
-#define LV_USE_DRAW_SDL 1
+#define LV_USE_DRAW_SDL 0
 
 /*=======================
  * FEATURE CONFIGURATION
